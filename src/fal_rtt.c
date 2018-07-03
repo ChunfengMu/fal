@@ -248,11 +248,13 @@ static void fal(uint8_t argc, char **argv) {
             {
                 rt_kprintf("Probed a flash device | %s | addr: %ld | len: %d |.\n", flash_dev->name,
                         flash_dev->addr, flash_dev->len);
+                fal_show_part_table();
             }
             else if (part_dev)
             {
                 rt_kprintf("Probed a flash partition | %s | flash_dev: %s | offset: %ld | len: %d |.\n",
                         part_dev->name, part_dev->flash_name, part_dev->offset, part_dev->len);
+                fal_show_part_table();
             }
             else
             {
